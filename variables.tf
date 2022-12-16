@@ -133,8 +133,7 @@ variable "agents_pool_name" {
 
 variable "vnet_subnet_id" {
   type        = string
-  description = "(Optional) The ID of a Subnet where the Kubernetes Node Pool should exist. Changing this forces a new resource to be created."
-  default     = null
+  description = "(Optional) The ID of a Subnet where the Kubernetes Node Pool should exist. Changing this forces a new resource to be created."  
 }
 
 variable "sku_tier" {
