@@ -1,13 +1,13 @@
 module "aks_network" {
   source = "../../modules/network"
 
-  # resource_group_name_vnet       = var.resource_group_name_vnet
-  # location                       = var.location
-  # virtual_network_name           = var.virtual_network_name
-  # virtual_network_address_prefix = var.virtual_network_address_prefix
-  # aks_subnet_name                = var.aks_subnet_name
-  # aks_subnet_address_prefix      = var.aks_subnet_address_prefix 
-  # tags                           = var.tags
+  resource_group_name_vnet       = var.resource_group_name_vnet
+  location                       = var.location
+  virtual_network_name           = var.virtual_network_name
+  virtual_network_address_prefix = var.virtual_network_address_prefix
+  aks_subnet_name                = var.aks_subnet_name
+  aks_subnet_address_prefix      = var.aks_subnet_address_prefix 
+  tags                           = var.tags
 }
 
 module "aks_cluster" {
