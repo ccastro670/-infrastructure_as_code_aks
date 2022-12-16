@@ -17,3 +17,8 @@ variable "namespace_name_ingress" {
 variable "create_namespace_ingress" {
   type    = bool  
 }
+
+variable "repository" {
+  description = "Helm repository"
+  type        = string
+}

@@ -6,8 +6,5 @@ namespace        = var.namespace_name_ingress
 version          = var.version_release_ingress
 repository       = "https://kubernetes.github.io/ingress-nginx"
 
-values = [
-   
-    templatefile("values-aks-ingress-nginx.yaml")
-]
+values = [file("${path.module}/values-aks-ingress-nginx.yaml")]
 }
