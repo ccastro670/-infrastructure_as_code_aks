@@ -28,7 +28,7 @@ resource "azurerm_kubernetes_cluster" "aksgitops" {
     availability_zones    = var.aks_availability_zones
     enable_auto_scaling   = var.enable_auto_scaling
     min_count             = var.agents_min_count
-    max_count             = var.aks_agent_max_count
+    max_count             = var.agents_max_count
     orchestrator_version  = var.kubernetes_version
     tags = var.tags
     
