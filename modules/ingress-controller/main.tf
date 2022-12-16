@@ -7,6 +7,7 @@ version          = var.version_release_ingress
 repository       = "https://kubernetes.github.io/ingress-nginx"
 
 values = [
-    "${file("./values-aks-ingress-nginx.yaml")}"
-  ]
+   
+    templatefile("values-aks-ingress-nginx.yaml")
+]
 }

@@ -57,9 +57,9 @@ module "aks_cluster" {
 module "aks_ingress_controller" {
   source = "../../modules/ingress-controller"
   
-  # version_release_ingress   = var.version_release_ingress
-  # application_name_ingress  = var.application_name_ingress
-  # chart_name_ingress        = var.chart_name_ingress
-  # namespace_name_ingress    = var.namespace_name_ingress
-  # create_namespace_ingress  = var.create_namespace_ingress 
+  version_release_ingress   = var.version_release_ingress
+  application_name_ingress  = var.application_name_ingress
+  chart_name_ingress        = var.chart_name_ingress
+  namespace_name_ingress    = var.namespace_name_ingress
+  create_namespace_ingress  = var.create_namespace_ingress 
 }
