@@ -25,7 +25,7 @@ resource "azurerm_kubernetes_cluster" "aksgitops" {
     os_disk_type          = var.aks_agent_os_disk_type
     vnet_subnet_id        = var.vnet_subnet_id
     max_pods              = var.agents_max_pods
-    availability_zones    = var.aks_availability_zones
+    #availability_zones    = var.aks_availability_zones
     enable_auto_scaling   = var.enable_auto_scaling
     min_count             = var.agents_min_count
     max_count             = var.agents_max_count
