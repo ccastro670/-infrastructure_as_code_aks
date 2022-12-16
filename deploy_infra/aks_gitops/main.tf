@@ -61,5 +61,6 @@ module "aks_ingress_controller" {
   application_name_ingress  = var.application_name_ingress
   chart_name_ingress        = var.chart_name_ingress
   namespace_name_ingress    = var.namespace_name_ingress
-  create_namespace_ingress  = var.create_namespace_ingress 
+  create_namespace_ingress  = var.create_namespace_ingress
+  repository                = var.repository 
 }
