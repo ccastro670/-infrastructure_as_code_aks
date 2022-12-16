@@ -263,3 +263,8 @@ variable "namespace_name_ingress" {
 variable "create_namespace_ingress" {
   type    = bool  
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "Any tags that should be present on the AKS cluster resources"
+}
