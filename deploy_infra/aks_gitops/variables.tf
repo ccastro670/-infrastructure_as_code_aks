@@ -268,3 +268,8 @@ variable "tags" {
   type        = map(string)
   description = "Any tags that should be present on the AKS cluster resources"
 }
+
+variable "repository" {
+  description = "Helm repository"
+  type        = string
+}
