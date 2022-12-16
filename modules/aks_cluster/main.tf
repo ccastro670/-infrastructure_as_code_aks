@@ -37,9 +37,9 @@ resource "azurerm_kubernetes_cluster" "aksgitops" {
     ## or max_surge = 50%
   }
 
-  lifecycle {
-    ignore_changes = [node_count]
-  }
+  #lifecycle {
+  #  ignore_changes = [node_count]
+  #}
 
   }  
 
