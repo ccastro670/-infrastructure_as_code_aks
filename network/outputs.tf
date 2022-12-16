@@ -14,7 +14,7 @@ output "subne_id" {
   value = azurerm_subnet.akssubnetgitops.id
 }
 
-output "address_space_vnet" {
+output "address_space_subnet" {
   value = azurerm_subnet.akssubnetgitops.address_prefixes
 }
 
