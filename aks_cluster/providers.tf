@@ -8,12 +8,12 @@ terraform {
       version = "3.36.0"
     }
   }  
-  backend "azurerm" {
-    resource_group_name  = "RG-AZ-STORAGE_ACC"
-    storage_account_name = "terraform0003"
-    container_name       = "tfstateaksmodule"
-    key                  = "aksmodule.terraform.tfstate"
-  }
+  #backend "azurerm" {
+  # resource_group_name  = "RG-AZ-STORAGE_ACC"
+  #  storage_account_name = "terraform0003"
+  #  container_name       = "tfstateaksmodule"
+  #  key                  = "aksmodule.terraform.tfstate"
+  #}
 }
 
 provider "azurerm" {
