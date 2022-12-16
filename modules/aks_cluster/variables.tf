@@ -2,31 +2,10 @@ variable "resource_group_name" {
   type = string  
   description = "Name azure Resource group for aks."
 }
-
-variable "resource_group_name_vnet" {
-  type = string  
-  description = "Name azure Resource group for aks vnet."
-}
-
 variable "location" {
   type = string  
   description = "Location of the resources."
 }
-variable "virtual_network_name" {
-  type = string
-  description = "Virtual network name"  
-}
-
-variable "aks_subnet_name" {
-  type = string
-  description = "Subnet Name."  
-}
-
-variable "aks_subnet_address_prefix" {
-  type = string
-  description = "Subnet address prefix."  
-}
-
 variable "aks_name" {
   type = string
   description = "AKS cluster name"  
