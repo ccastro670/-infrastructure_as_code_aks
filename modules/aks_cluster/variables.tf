@@ -215,3 +215,8 @@ variable "aks_nodepool_os_type_linux" {
   type        = string
   description = "OS type of Nodepool" 
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "Any tags that should be present on the AKS cluster resources"
+}

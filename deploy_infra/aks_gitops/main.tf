@@ -6,7 +6,8 @@ module "aks_network" {
   virtual_network_name           = var.virtual_network_name
   virtual_network_address_prefix = var.virtual_network_address_prefix
   aks_subnet_name                = var.aks_subnet_name
-  aks_subnet_address_prefix      = var.aks_subnet_address_prefix  
+  aks_subnet_address_prefix      = var.aks_subnet_address_prefix 
+  tags                           = var.tags
 }
 
 module "aks_cluster" {
@@ -50,6 +51,7 @@ module "aks_cluster" {
   http_application_routing_enabled = var.http_application_routing_enabled
   aks_mode_nodepool_user     = var.aks_mode_nodepool_user
   aks_agent_os_disk_size     = var.aks_agent_os_disk_size
+  tags                       = var.tags
 }
 
 module "aks_ingress_controller" {
