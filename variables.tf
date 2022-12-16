@@ -103,14 +103,12 @@ variable "aks_availability_zones" {
 
 variable "aks_agent_labels" {
   type        = map(string)
-  description = "(Optional) A map of Kubernetes labels which should be applied to nodes in the Default Node Pool. Changing this forces a new resource to be created."
-  default     = {}
+  description = "(Optional) A map of Kubernetes labels which should be applied to nodes in the Default Node Pool. Changing this forces a new resource to be created."  
 }
 
 variable "aks_agent_taints" {
   type        = list(string)
-  description = "(Optional) A map of Kubernetes labels which should be applied to nodes in the Default Node Pool. Changing this forces a new resource to be created."
-  default     = {}
+  description = "(Optional) A map of Kubernetes Taints which should be applied to nodes in the Default Node Pool."  
 }
 
 variable "agents_max_count" {
