@@ -25,7 +25,7 @@ variable "aks_subnet_name" {
 }
 
 variable "aks_subnet_address_prefix" {
-  type    = list(string)
+  type    = list(any)
   description = "Subnet address prefix aks." 
 }
 
