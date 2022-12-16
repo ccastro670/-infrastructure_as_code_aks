@@ -1,5 +1,5 @@
 module "aks_network" {
-  source = "./modules/network"
+  source = "../modules/network"
 
   resource_group_name_vnet       = var.resource_group_name_vnet
   location                       = var.location
@@ -11,7 +11,7 @@ module "aks_network" {
 }
 
 module "aks_cluster" {
-  source = "./modules/aks_cluster"
+  source = "../modules/aks_cluster"
 
   resource_group_name        = var.resource_group_name
   location                   = var.location
@@ -30,7 +30,7 @@ module "aks_cluster" {
 }
 
 module "aks_ingress_controller" {
-  source = "./modules/ingress-controller"
+  source = "../modules/ingress-controller"
   
   version_release_ingress   = var.version_release_ingress
   application_name_ingress  = var.application_name_ingress
