@@ -28,6 +28,8 @@ module "aks_cluster" {
   aks_docker_bridge_cidr     = var.aks_docker_bridge_cidr
   aks_network_plugin         = var.aks_network_plugin 
   tags                       = var.tags 
+  depends_on                 = [module.aks_network]
+
 
 }
 
@@ -39,4 +41,5 @@ module "aks_ingress_controller" {
   chart_name_ingress        = var.chart_name_ingress
   namespace_name_ingress    = var.namespace_name_ingress
   create_namespace_ingress  = var.create_namespace_ingress
+  depends_on                 = [module.aks_cluster]
 }
