@@ -70,10 +70,10 @@ variable "aks_docker_bridge_cidr" {
   description = "CIDR notation IP for Docker bridge."  
 }
 
-variable "aks_availability_zones" {
-  type        = list(string)
-  description = "(Optional) A list of Availability Zones across which the Node Pool should be spread. Changing this forces a new resource to be created." 
-}
+#variable "aks_availability_zones" {
+#  type        = list(string)
+#  description = "(Optional) A list of Availability Zones across which the Node Pool should be spread. Changing this forces a new resource to be created." 
+#}
 
 variable "aks_agent_labels" {
   type        = map(string)

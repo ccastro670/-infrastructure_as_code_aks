@@ -74,7 +74,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "argocdnode" {
   max_pods              = var.gents_max_pods_argocd
   os_type               = var.aks_nodepool_os_type_linux
   vnet_subnet_id        = var.vnet_subnet_id
-  availability_zones    = var.aks_availability_zones
+  #availability_zones    = var.aks_availability_zones
   enable_auto_scaling   = var.enable_auto_scaling
   min_count             = var.agents_min_count_argocd
   max_count             = var.agents_max_count_argocd
