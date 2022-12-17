@@ -36,11 +36,7 @@ resource "azurerm_kubernetes_cluster" "aksgitops" {
     max_surge = var.max_surge_nodepool
     ## or max_surge = 50%
   }
-
-  #lifecycle {
-  #  ignore_changes = [node_count]
-  #}
-
+  
   }  
 
 dynamic "identity" {
@@ -64,14 +60,14 @@ dynamic "identity" {
 resource "azurerm_kubernetes_cluster_node_pool" "argocdnode" {
   name                  = var.agents_pool_name_gitops
   kubernetes_cluster_id = azurerm_kubernetes_cluster.aksgitops.id
-  vm_size               = var.aks_argo_vm_size
-  node_count            = var.aks_argo_count
+  vm_size               = var.aks_gitops_vm_size
+  node_count            = var.aks_agent_count
   os_disk_size_gb       = var.aks_agent_os_disk_size
   os_disk_type          = var.aks_agent_os_disk_type
   node_labels           = var.aks_agent_labels
   node_taints           = var.aks_agent_taints
   mode                  = var.aks_mode_nodepool_user
-  max_pods              = var.gents_max_pods_argocd
+  max_pods              = var.agents_max_pods_argocd
   os_type               = var.aks_nodepool_os_type_linux
   vnet_subnet_id        = var.vnet_subnet_id
   #availability_zones    = var.aks_availability_zones
