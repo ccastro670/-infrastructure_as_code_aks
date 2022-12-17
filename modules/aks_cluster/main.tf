@@ -43,8 +43,7 @@ dynamic "identity" {
     for_each = var.client_id == "" || var.client_secret == "" ? ["identity"] : []
 
     content {
-      type         = var.identity_type
-      identity_ids = var.identity_ids
+      type         = var.identity_type     
     }
   }
   network_profile {

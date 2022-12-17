@@ -26,6 +26,7 @@ variable "aks_subnet_name" {
 variable "aks_subnet_address_prefix" {
   type    = string
   description = "Subnet address prefix aks." 
+  default = ""
 }
 
 variable "tags" {

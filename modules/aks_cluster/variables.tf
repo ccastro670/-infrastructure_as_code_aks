@@ -120,12 +120,6 @@ variable "private_cluster_enabled" {
   description = "If true cluster API server will be exposed only on internal IP address and available only in cluster vnet." 
 }
 
-variable "identity_ids" {
-  type        = list(string)
-  description = "(Optional) Specifies a list of User Assigned Managed Identity IDs to be assigned to this Kubernetes Cluster."
-  default     = null
-}
-
 variable "identity_type" {
   type        = string
   description = "(Optional) The type of identity used for the managed cluster. Conflict with `client_id` and `client_secret`. Possible values are `SystemAssigned`, `UserAssigned`, `SystemAssigned, UserAssigned`(to enable both). If `UserAssigned` or `SystemAssigned, UserAssigned` is set, an `identity_ids` must be set as well."
