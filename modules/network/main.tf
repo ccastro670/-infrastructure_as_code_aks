@@ -19,7 +19,7 @@ resource "azurerm_subnet" "akssubnetgitops" {
   name                 = var.aks_subnet_name
   virtual_network_name = var.virtual_network_name
   resource_group_name  = var.resource_group_name_vnet
-  address_prefixes     = var.aks_subnet_address_prefix
+  address_prefixes     = [var.aks_subnet_address_prefix]
 
   lifecycle {
     prevent_destroy = true

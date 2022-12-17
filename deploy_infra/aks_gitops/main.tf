@@ -33,6 +33,7 @@ module "aks_cluster" {
   aks_gitops_vm_size         = var.aks_gitops_vm_size
   vnet_subnet_id             = var.vnet_subnet_id
   agents_max_pods_argocd     = var.agents_max_pods_argocd
+  agents_pool_name_gitops    = var.agents_pool_name_gitops
   #aks_availability_zones     = var.aks_availability_zones
   agents_max_count           = var.agents_max_count
   aks_agent_os_disk_type     = var.aks_agent_os_disk_type 

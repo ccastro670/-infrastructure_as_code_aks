@@ -105,6 +105,11 @@ variable "agents_pool_name" {
   description = "The default Azure AKS agentpool (nodepool) name."    
 }
 
+variable "agents_pool_name_gitops" {
+  type        = string
+  description = "Name nodepool Gitops"  
+}
+
 variable "vnet_subnet_id" {
   type        = string
   description = "(Optional) The ID of a Subnet where the Kubernetes Node Pool should exist. Changing this forces a new resource to be created."  

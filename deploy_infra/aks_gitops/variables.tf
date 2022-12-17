@@ -173,6 +173,11 @@ variable "agents_max_count_argocd" {
   description = "Maximum number of nodes in a pool"  
 }
 
+variable "agents_pool_name_gitops" {
+  type        = string
+  description = "Name nodepool Gitops"  
+}
+
 variable "agents_max_pods_argocd" {
   type        = number
   description = "(Optional) The maximum number of pods that can run on each agent. Changing this forces a new resource to be created." 
