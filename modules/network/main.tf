@@ -11,7 +11,7 @@ resource "azurerm_virtual_network" "aksvnetgitops" {
   depends_on           = [azurerm_resource_group.rg_vnet]
   tags = var.tags
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
 
@@ -20,8 +20,9 @@ resource "azurerm_subnet" "akssubnetgitops" {
   virtual_network_name = var.virtual_network_name
   resource_group_name  = var.resource_group_name_vnet
   address_prefixes     = [var.aks_subnet_address_prefix]
+  depends_on           = [azurerm_virtual_network.aksvnetgitops]
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }

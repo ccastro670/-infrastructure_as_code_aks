@@ -1,11 +1,9 @@
 controller:
   config:
     large-client-header-buffers: 4 128k
-    proxy-buffer-size: 128k
-    use-gzip: '"false"'
+    proxy-buffer-size: 128k    
   service:
-    annotations:
-      #service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+    annotations:     
       service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
   type: LoadBalancer  
   resources:

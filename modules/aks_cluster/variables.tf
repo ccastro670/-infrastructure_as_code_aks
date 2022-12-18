@@ -137,7 +137,7 @@ variable "identity_type" {
 }
 
 variable "max_surge_nodepool" {
-  type        = string
+  type        = number
   description = "The max surge value may be customized per node pool to enable a trade-off between upgrade speed and upgrade disruption."    
 }
 
@@ -169,15 +169,13 @@ variable "enable_auto_scaling" {
 variable "client_id" {
   type        = string
   description = "(Optional) The Client ID (appId) for the Service Principal used for the AKS deployment"
-  default     = ""
-  nullable    = false
+  default     = ""  
 }
 
 variable "client_secret" {
   type        = string
   description = "(Optional) The Client Secret (password) for the Service Principal used for the AKS deployment"
-  default     = ""
-  nullable    = false
+  default     = ""  
 }
 
 variable "aks_load_balancer_sku" {
@@ -218,4 +216,25 @@ variable "aks_nodepool_os_type_linux" {
 variable "tags" { 
   type        = map(string)
   description = "Any tags that should be present on the AKS cluster resources"
+}
+
+variable "key_vault_secrets_provider_enabled" {
+  type        = bool
+  description = "(Optional) Whether to use the Azure Key Vault Provider for Secrets Store CSI Driver in an AKS cluster. For more details: https://docs.microsoft.com/en-us/azure/aks/csi-secrets-store-driver"
+  default     = true
+  nullable    = false
+}
+
+variable "secret_rotation_enabled" {
+  type        = bool
+  description = "Is secret rotation enabled? This variable is only used when `key_vault_secrets_provider_enabled` is `true` and defaults to `false`"
+  default     = true
+  nullable    = false
+}
+
+variable "secret_rotation_interval" {
+  type        = string
+  description = "The interval to poll for secret rotation. This attribute is only set when `secret_rotation` is `true` and defaults to `2m`"
+  default     = "2m"
+  nullable    = false
 }

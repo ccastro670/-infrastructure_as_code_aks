@@ -1,5 +1,5 @@
 variable "version_release_ingress" {
-  type        = number  
+  type        = string  
 }
 
 variable "application_name_ingress" {

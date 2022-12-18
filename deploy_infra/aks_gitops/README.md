@@ -1,6 +1,3 @@
-# Terraform Deployment AKS Cluster & ArgoCD
-Deployment AKS Cluster
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

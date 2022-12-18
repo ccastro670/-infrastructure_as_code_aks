@@ -4,7 +4,7 @@ create_namespace = var.create_namespace_ingress
 chart            = var.chart_name_ingress
 namespace        = var.namespace_name_ingress
 version          = var.version_release_ingress
-repository       = "https://kubernetes.github.io/ingress-nginx"
+repository       = var.repository
 
 values = [file("${path.module}/values-aks-ingress-nginx.yaml")]
 }

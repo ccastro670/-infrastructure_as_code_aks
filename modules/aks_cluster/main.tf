@@ -16,6 +16,7 @@ resource "azurerm_kubernetes_cluster" "aksgitops" {
   role_based_access_control_enabled = var.role_based_access_control_enabled
   tags = var.tags
   
+  
 
   default_node_pool {
     name                  = var.agents_pool_name
@@ -24,8 +25,7 @@ resource "azurerm_kubernetes_cluster" "aksgitops" {
     os_disk_size_gb       = var.aks_agent_os_disk_size
     os_disk_type          = var.aks_agent_os_disk_type
     vnet_subnet_id        = var.vnet_subnet_id
-    max_pods              = var.agents_max_pods
-    #availability_zones    = var.aks_availability_zones
+    max_pods              = var.agents_max_pods    
     enable_auto_scaling   = var.enable_auto_scaling
     min_count             = var.agents_min_count
     max_count             = var.agents_max_count
@@ -46,6 +46,15 @@ dynamic "identity" {
       type         = var.identity_type     
     }
   }
+
+  dynamic "key_vault_secrets_provider" {
+    for_each = var.key_vault_secrets_provider_enabled ? ["key_vault_secrets_provider"] : []
+
+    content {
+      secret_rotation_enabled  = var.secret_rotation_enabled
+      secret_rotation_interval = var.secret_rotation_interval
+    }
+  }
   network_profile {
     network_plugin     = var.aks_network_plugin
     dns_service_ip     = var.aks_dns_service_ip
@@ -54,13 +63,14 @@ dynamic "identity" {
     load_balancer_sku  = var.aks_load_balancer_sku
     network_policy     = var.aks_network_policy
   }  
+
 }
 
 resource "azurerm_kubernetes_cluster_node_pool" "argocdnode" {
   name                  = var.agents_pool_name_gitops
   kubernetes_cluster_id = azurerm_kubernetes_cluster.aksgitops.id
   vm_size               = var.aks_gitops_vm_size
-  node_count            = var.aks_agent_count
+  node_count            = var.aks_argocd_count
   os_disk_size_gb       = var.aks_agent_os_disk_size
   os_disk_type          = var.aks_agent_os_disk_type
   node_labels           = var.aks_agent_labels
@@ -68,13 +78,13 @@ resource "azurerm_kubernetes_cluster_node_pool" "argocdnode" {
   mode                  = var.aks_mode_nodepool_user
   max_pods              = var.agents_max_pods_argocd
   os_type               = var.aks_nodepool_os_type_linux
-  vnet_subnet_id        = var.vnet_subnet_id
-  #availability_zones    = var.aks_availability_zones
+  vnet_subnet_id        = var.vnet_subnet_id  
   enable_auto_scaling   = var.enable_auto_scaling
   min_count             = var.agents_min_count_argocd
   max_count             = var.agents_max_count_argocd
   orchestrator_version  = var.kubernetes_version
   tags = var.tags
+  
 
 upgrade_settings {
     max_surge = var.max_surge_nodepool
@@ -84,4 +94,10 @@ upgrade_settings {
 lifecycle {
     ignore_changes = [node_count]
   }
+}
+
+resource "local_file" "kube_config_raw_aks" {
+    content  = azurerm_kubernetes_cluster.aksgitops.kube_config_raw
+    filename = "${path.module}/config_aksgitops"
+    depends_on = [azurerm_kubernetes_cluster.aksgitops]
 }
