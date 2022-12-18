@@ -11,11 +11,7 @@ Deployment AKS Cluster
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="providers_helm"></a> [helm](#providers\_helm) | 2.8.0 |
-| <a name="providers_azurerm"></a> [azurerm](#providers\_azurerm) | 3.36.0 |
-| <a name="provider_local"></a> [local](#provider\_local) | n/a |
+No providers.
 
 ## Modules
 
