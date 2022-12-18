@@ -8,7 +8,7 @@ Terraform will perform the following actions:
 
 [1m  # module.aks_cluster.azurerm_kubernetes_cluster.aksgitops[0m will be created[0m[0m
 [0m  [32m+[0m[0m resource "azurerm_kubernetes_cluster" "aksgitops" {
-      [32m+[0m [0m[1m[0mdns_prefix[0m[0m                          = "rg-eastus2-dev-node-aksgitops-01"
+      [32m+[0m [0m[1m[0mdns_prefix[0m[0m                          = "aks-eastus2-dev-gitops-01"
       [32m+[0m [0m[1m[0mfqdn[0m[0m                                = (known after apply)
       [32m+[0m [0m[1m[0mhttp_application_routing_enabled[0m[0m    = false
       [32m+[0m [0m[1m[0mhttp_application_routing_zone_name[0m[0m  = (known after apply)
@@ -637,7 +637,7 @@ Terraform will perform the following actions:
 [0m[1mmodule.aks_network.azurerm_resource_group.rg_vnet: Creating...[0m[0m
 [0m[1mmodule.aks_network.azurerm_resource_group.rg_vnet: Creation complete after 1s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-aksvnetgitops-01][0m
 [0m[1mmodule.aks_network.azurerm_virtual_network.aksvnetgitops: Creating...[0m[0m
-[0m[1mmodule.aks_network.azurerm_virtual_network.aksvnetgitops: Creation complete after 6s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-aksvnetgitops-01/providers/Microsoft.Network/virtualNetworks/vnet-eastus2-dev-aksvnetgitops-01][0m
+[0m[1mmodule.aks_network.azurerm_virtual_network.aksvnetgitops: Creation complete after 5s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-aksvnetgitops-01/providers/Microsoft.Network/virtualNetworks/vnet-eastus2-dev-aksvnetgitops-01][0m
 [0m[1mmodule.aks_network.azurerm_subnet.akssubnetgitops: Creating...[0m[0m
 [0m[1mmodule.aks_network.azurerm_subnet.akssubnetgitops: Creation complete after 5s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-aksvnetgitops-01/providers/Microsoft.Network/virtualNetworks/vnet-eastus2-dev-aksvnetgitops-01/subnets/snet-eastus2-dev-akssnetgitops-01][0m
 [0m[1mmodule.aks_cluster.azurerm_resource_group.rgaksgitops: Creating...[0m[0m
@@ -658,14 +658,10 @@ Terraform will perform the following actions:
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [2m10s elapsed][0m[0m
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [2m20s elapsed][0m[0m
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [2m30s elapsed][0m[0m
-[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [2m40s elapsed][0m[0m
-[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [2m50s elapsed][0m[0m
-[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [3m0s elapsed][0m[0m
-[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [3m10s elapsed][0m[0m
-[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Creation complete after 3m12s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-aksgitops-01/providers/Microsoft.ContainerService/managedClusters/aks-eastus2-dev-gitops-01][0m
+[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Creation complete after 2m38s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-aksgitops-01/providers/Microsoft.ContainerService/managedClusters/aks-eastus2-dev-gitops-01][0m
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode: Creating...[0m[0m
 [0m[1mmodule.aks_cluster.local_file.kube_config_raw_aks: Creating...[0m[0m
-[0m[1mmodule.aks_cluster.local_file.kube_config_raw_aks: Creation complete after 0s [id=bc266719b09111a8674486d7493011e864008268][0m
+[0m[1mmodule.aks_cluster.local_file.kube_config_raw_aks: Creation complete after 0s [id=d46e5545a5fbecffa15eb0527ce67faed117b546][0m
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode: Still creating... [10s elapsed][0m[0m
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode: Still creating... [20s elapsed][0m[0m
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode: Still creating... [30s elapsed][0m[0m
@@ -687,7 +683,7 @@ Terraform will perform the following actions:
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode: Still creating... [3m10s elapsed][0m[0m
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode: Still creating... [3m20s elapsed][0m[0m
 [0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode: Still creating... [3m30s elapsed][0m[0m
-[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode: Creation complete after 3m37s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-aksgitops-01/providers/Microsoft.ContainerService/managedClusters/aks-eastus2-dev-gitops-01/agentPools/argocdnode][0m
+[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode: Creation complete after 3m38s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-aksgitops-01/providers/Microsoft.ContainerService/managedClusters/aks-eastus2-dev-gitops-01/agentPools/argocdnode][0m
 [0m[1mmodule.aks_ingress_controller.helm_release.ingress_controller: Creating...[0m[0m
 [0m[1mmodule.aks_ingress_controller.helm_release.ingress_controller: Still creating... [10s elapsed][0m[0m
 [0m[1mmodule.aks_ingress_controller.helm_release.ingress_controller: Still creating... [20s elapsed][0m[0m
