@@ -14,6 +14,7 @@ resource "azurerm_kubernetes_cluster" "aksgitops" {
   kubernetes_version = var.kubernetes_version  
   sku_tier = var.sku_tier
   role_based_access_control_enabled = var.role_based_access_control_enabled
+  depends_on = [azurerm_resource_group.rgaksgitops]
   tags = var.tags
   
   

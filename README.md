@@ -11,7 +11,11 @@ Deployment AKS Cluster
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="providers_helm"></a> [helm](#providers\_helm) | 2.8.0 |
+| <a name="providers_azurerm"></a> [azurerm](#providers\_azurerm) | 3.36.0 |
+| <a name="provider_local"></a> [local](#provider\_local) | n/a |
 
 ## Modules
 
@@ -25,7 +29,20 @@ No providers.
 
 ## Resources
 
-No resources.
+ Name | Type |
+|------|------|
+| [azurerm_kubernetes_cluster.aksgitops](https://registry.terraform.io/providers/hashicorp/azurerm/3.36.0/docs/resources/kubernetes_cluster) | resource |
+| [azurerm_kubernetes_cluster_node_pool.argocdnode](https://registry.terraform.io/providers/hashicorp/azurerm/3.36.0/docs/resources/kubernetes_cluster_node_pool) | resource |
+| [azurerm_resource_group.rgaksgitops](https://registry.terraform.io/providers/hashicorp/azurerm/3.36.0/docs/resources/resource_group) | resource |
+| [local_file.kube_config_raw_aks](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
+| [azurerm_key_vault.aks_key_vault](https://registry.terraform.io/providers/hashicorp/azurerm/3.36.0/docs/resources/key_vault) | resource |
+| [azurerm_resource_group.rg_key_vault](https://registry.terraform.io/providers/hashicorp/azurerm/3.36.0/docs/resources/resource_group) | resource |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.36.0/docs/data-sources/client_config) | data source |
+| [azurerm_resource_group.rg_vnet](https://registry.terraform.io/providers/hashicorp/azurerm/3.36.0/docs/resources/resource_group) | resource |
+| [azurerm_subnet.akssubnetgitops](https://registry.terraform.io/providers/hashicorp/azurerm/3.36.0/docs/resources/subnet) | resource |
+| [azurerm_virtual_network.aksvnetgitops](https://registry.terraform.io/providers/hashicorp/azurerm/3.36.0/docs/resources/virtual_network) | resource |
+| [helm_release.ingress_controller](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
+| [helm_release.argocd](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
 
 ## Inputs
 
