@@ -1,0 +1,650 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+ [36m<=[0m read (data resources)
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.aks_cluster.azurerm_kubernetes_cluster.aksgitops[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "azurerm_kubernetes_cluster" "aksgitops" {
+      [32m+[0m [0m[1m[0mdns_prefix[0m[0m                          = "aks-eastus2-prod-gitops-01"
+      [32m+[0m [0m[1m[0mfqdn[0m[0m                                = (known after apply)
+      [32m+[0m [0m[1m[0mhttp_application_routing_enabled[0m[0m    = false
+      [32m+[0m [0m[1m[0mhttp_application_routing_zone_name[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0mimage_cleaner_enabled[0m[0m               = false
+      [32m+[0m [0m[1m[0mimage_cleaner_interval_hours[0m[0m        = 48
+      [32m+[0m [0m[1m[0mkube_admin_config[0m[0m                   = (sensitive value)
+      [32m+[0m [0m[1m[0mkube_admin_config_raw[0m[0m               = (sensitive value)
+      [32m+[0m [0m[1m[0mkube_config[0m[0m                         = (sensitive value)
+      [32m+[0m [0m[1m[0mkube_config_raw[0m[0m                     = (sensitive value)
+      [32m+[0m [0m[1m[0mkubernetes_version[0m[0m                  = "1.24.6"
+      [32m+[0m [0m[1m[0mlocation[0m[0m                            = "eastus2"
+      [32m+[0m [0m[1m[0mname[0m[0m                                = "aks-eastus2-prod-gitops-01"
+      [32m+[0m [0m[1m[0mnode_resource_group[0m[0m                 = "rg-eastus2-prod-node-aksgitops-01"
+      [32m+[0m [0m[1m[0moidc_issuer_url[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mportal_fqdn[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_cluster_enabled[0m[0m             = false
+      [32m+[0m [0m[1m[0mprivate_cluster_public_fqdn_enabled[0m[0m = false
+      [32m+[0m [0m[1m[0mprivate_dns_zone_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_fqdn[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_network_access_enabled[0m[0m       = true
+      [32m+[0m [0m[1m[0mresource_group_name[0m[0m                 = "rg-eastus2-prod-aksgitops-01"
+      [32m+[0m [0m[1m[0mrole_based_access_control_enabled[0m[0m   = true
+      [32m+[0m [0m[1m[0mrun_command_enabled[0m[0m                 = true
+      [32m+[0m [0m[1m[0msku_tier[0m[0m                            = "Paid"
+      [32m+[0m [0m[1m[0mtags[0m[0m                                = {
+          [32m+[0m [0m"Application" = "AKS-GitOps"
+          [32m+[0m [0m"Environment" = "PROD"
+          [32m+[0m [0m"Managed"     = "Terraform"
+          [32m+[0m [0m"Owner"       = "Snittech"
+          [32m+[0m [0m"Responsable" = "Devops Team"
+        }
+      [32m+[0m [0m[1m[0mworkload_identity_enabled[0m[0m           = false
+
+      [32m+[0m [0mauto_scaler_profile {
+          [32m+[0m [0m[1m[0mbalance_similar_node_groups[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mempty_bulk_delete_max[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mexpander[0m[0m                         = (known after apply)
+          [32m+[0m [0m[1m[0mmax_graceful_termination_sec[0m[0m     = (known after apply)
+          [32m+[0m [0m[1m[0mmax_node_provisioning_time[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mmax_unready_nodes[0m[0m                = (known after apply)
+          [32m+[0m [0m[1m[0mmax_unready_percentage[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mnew_pod_scale_up_delay[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mscale_down_delay_after_add[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mscale_down_delay_after_delete[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mscale_down_delay_after_failure[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mscale_down_unneeded[0m[0m              = (known after apply)
+          [32m+[0m [0m[1m[0mscale_down_unready[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mscale_down_utilization_threshold[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mscan_interval[0m[0m                    = (known after apply)
+          [32m+[0m [0m[1m[0mskip_nodes_with_local_storage[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mskip_nodes_with_system_pods[0m[0m      = (known after apply)
+        }
+
+      [32m+[0m [0mdefault_node_pool {
+          [32m+[0m [0m[1m[0menable_auto_scaling[0m[0m  = true
+          [32m+[0m [0m[1m[0mkubelet_disk_type[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mmax_count[0m[0m            = 3
+          [32m+[0m [0m[1m[0mmax_pods[0m[0m             = 32
+          [32m+[0m [0m[1m[0mmin_count[0m[0m            = 2
+          [32m+[0m [0m[1m[0mname[0m[0m                 = "system"
+          [32m+[0m [0m[1m[0mnode_count[0m[0m           = 2
+          [32m+[0m [0m[1m[0mnode_labels[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0morchestrator_version[0m[0m = "1.24.6"
+          [32m+[0m [0m[1m[0mos_disk_size_gb[0m[0m      = 32
+          [32m+[0m [0m[1m[0mos_disk_type[0m[0m         = "Ephemeral"
+          [32m+[0m [0m[1m[0mos_sku[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mscale_down_mode[0m[0m      = "Delete"
+          [32m+[0m [0m[1m[0mtags[0m[0m                 = {
+              [32m+[0m [0m"Application" = "AKS-GitOps"
+              [32m+[0m [0m"Environment" = "PROD"
+              [32m+[0m [0m"Managed"     = "Terraform"
+              [32m+[0m [0m"Owner"       = "Snittech"
+              [32m+[0m [0m"Responsable" = "Devops Team"
+            }
+          [32m+[0m [0m[1m[0mtype[0m[0m                 = "VirtualMachineScaleSets"
+          [32m+[0m [0m[1m[0multra_ssd_enabled[0m[0m    = false
+          [32m+[0m [0m[1m[0mvm_size[0m[0m              = "Standard_DS2"
+          [32m+[0m [0m[1m[0mvnet_subnet_id[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mworkload_runtime[0m[0m     = (known after apply)
+
+          [32m+[0m [0mupgrade_settings {
+              [32m+[0m [0m[1m[0mmax_surge[0m[0m = "2"
+            }
+        }
+
+      [32m+[0m [0midentity {
+          [32m+[0m [0m[1m[0mprincipal_id[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mtenant_id[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mtype[0m[0m         = "SystemAssigned"
+        }
+
+      [32m+[0m [0mkey_vault_secrets_provider {
+          [32m+[0m [0m[1m[0msecret_identity[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0msecret_rotation_enabled[0m[0m  = true
+          [32m+[0m [0m[1m[0msecret_rotation_interval[0m[0m = "2m"
+        }
+
+      [32m+[0m [0mkubelet_identity {
+          [32m+[0m [0m[1m[0mclient_id[0m[0m                 = (known after apply)
+          [32m+[0m [0m[1m[0mobject_id[0m[0m                 = (known after apply)
+          [32m+[0m [0m[1m[0muser_assigned_identity_id[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mnetwork_profile {
+          [32m+[0m [0m[1m[0mdns_service_ip[0m[0m     = "10.140.0.10"
+          [32m+[0m [0m[1m[0mdocker_bridge_cidr[0m[0m = "10.141.0.0/19"
+          [32m+[0m [0m[1m[0mip_versions[0m[0m        = (known after apply)
+          [32m+[0m [0m[1m[0mload_balancer_sku[0m[0m  = "standard"
+          [32m+[0m [0m[1m[0mnetwork_mode[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_plugin[0m[0m     = "azure"
+          [32m+[0m [0m[1m[0mnetwork_policy[0m[0m     = "azure"
+          [32m+[0m [0m[1m[0moutbound_type[0m[0m      = "loadBalancer"
+          [32m+[0m [0m[1m[0mpod_cidr[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mpod_cidrs[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mservice_cidr[0m[0m       = "10.140.0.0/20"
+          [32m+[0m [0m[1m[0mservice_cidrs[0m[0m      = (known after apply)
+
+          [32m+[0m [0mload_balancer_profile {
+              [32m+[0m [0m[1m[0meffective_outbound_ips[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0midle_timeout_in_minutes[0m[0m     = (known after apply)
+              [32m+[0m [0m[1m[0mmanaged_outbound_ip_count[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mmanaged_outbound_ipv6_count[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0moutbound_ip_address_ids[0m[0m     = (known after apply)
+              [32m+[0m [0m[1m[0moutbound_ip_prefix_ids[0m[0m      = (known after apply)
+              [32m+[0m [0m[1m[0moutbound_ports_allocated[0m[0m    = (known after apply)
+            }
+
+          [32m+[0m [0mnat_gateway_profile {
+              [32m+[0m [0m[1m[0meffective_outbound_ips[0m[0m    = (known after apply)
+              [32m+[0m [0m[1m[0midle_timeout_in_minutes[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mmanaged_outbound_ip_count[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mwindows_profile {
+          [32m+[0m [0m[1m[0madmin_password[0m[0m = (sensitive value)
+          [32m+[0m [0m[1m[0madmin_username[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mlicense[0m[0m        = (known after apply)
+
+          [32m+[0m [0mgmsa {
+              [32m+[0m [0m[1m[0mdns_server[0m[0m  = (known after apply)
+              [32m+[0m [0m[1m[0mroot_domain[0m[0m = (known after apply)
+            }
+        }
+    }
+
+[1m  # module.aks_cluster.azurerm_kubernetes_cluster_node_pool.argocdnode[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "azurerm_kubernetes_cluster_node_pool" "argocdnode" {
+      [32m+[0m [0m[1m[0menable_auto_scaling[0m[0m   = true
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mkubelet_disk_type[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mkubernetes_cluster_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mmax_count[0m[0m             = 6
+      [32m+[0m [0m[1m[0mmax_pods[0m[0m              = 32
+      [32m+[0m [0m[1m[0mmin_count[0m[0m             = 2
+      [32m+[0m [0m[1m[0mmode[0m[0m                  = "User"
+      [32m+[0m [0m[1m[0mname[0m[0m                  = "argocdnode"
+      [32m+[0m [0m[1m[0mnode_count[0m[0m            = 2
+      [32m+[0m [0m[1m[0mnode_labels[0m[0m           = {
+          [32m+[0m [0m"argocd" = "prod"
+        }
+      [32m+[0m [0m[1m[0mnode_taints[0m[0m           = [
+          [32m+[0m [0m"argocd=prod:NoSchedule",
+        ]
+      [32m+[0m [0m[1m[0morchestrator_version[0m[0m  = "1.24.6"
+      [32m+[0m [0m[1m[0mos_disk_size_gb[0m[0m       = 32
+      [32m+[0m [0m[1m[0mos_disk_type[0m[0m          = "Ephemeral"
+      [32m+[0m [0m[1m[0mos_sku[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mos_type[0m[0m               = "Linux"
+      [32m+[0m [0m[1m[0mpriority[0m[0m              = "Regular"
+      [32m+[0m [0m[1m[0mscale_down_mode[0m[0m       = "Delete"
+      [32m+[0m [0m[1m[0mspot_max_price[0m[0m        = -1
+      [32m+[0m [0m[1m[0mtags[0m[0m                  = {
+          [32m+[0m [0m"Application" = "AKS-GitOps"
+          [32m+[0m [0m"Environment" = "PROD"
+          [32m+[0m [0m"Managed"     = "Terraform"
+          [32m+[0m [0m"Owner"       = "Snittech"
+          [32m+[0m [0m"Responsable" = "Devops Team"
+        }
+      [32m+[0m [0m[1m[0multra_ssd_enabled[0m[0m     = false
+      [32m+[0m [0m[1m[0mvm_size[0m[0m               = "Standard_DS2"
+      [32m+[0m [0m[1m[0mvnet_subnet_id[0m[0m        = (known after apply)
+
+      [32m+[0m [0mupgrade_settings {
+          [32m+[0m [0m[1m[0mmax_surge[0m[0m = "2"
+        }
+    }
+
+[1m  # module.aks_cluster.azurerm_resource_group.rgaksgitops[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "azurerm_resource_group" "rgaksgitops" {
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mlocation[0m[0m = "eastus2"
+      [32m+[0m [0m[1m[0mname[0m[0m     = "rg-eastus2-prod-aksgitops-01"
+    }
+
+[1m  # module.aks_cluster.local_file.kube_config_raw_aks[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "local_file" "kube_config_raw_aks" {
+      [32m+[0m [0m[1m[0mcontent[0m[0m              = (sensitive value)
+      [32m+[0m [0m[1m[0mdirectory_permission[0m[0m = "0777"
+      [32m+[0m [0m[1m[0mfile_permission[0m[0m      = "0777"
+      [32m+[0m [0m[1m[0mfilename[0m[0m             = "../../modules/aks_cluster/config_aksgitops"
+      [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+    }
+
+[1m  # module.aks_gitops_argocd.helm_release.argocd[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "helm_release" "argocd" {
+      [32m+[0m [0m[1m[0matomic[0m[0m                     = false
+      [32m+[0m [0m[1m[0mchart[0m[0m                      = "argo-cd"
+      [32m+[0m [0m[1m[0mcleanup_on_fail[0m[0m            = false
+      [32m+[0m [0m[1m[0mcreate_namespace[0m[0m           = true
+      [32m+[0m [0m[1m[0mdependency_update[0m[0m          = false
+      [32m+[0m [0m[1m[0mdisable_crd_hooks[0m[0m          = false
+      [32m+[0m [0m[1m[0mdisable_openapi_validation[0m[0m = false
+      [32m+[0m [0m[1m[0mdisable_webhooks[0m[0m           = false
+      [32m+[0m [0m[1m[0mforce_update[0m[0m               = false
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mlint[0m[0m                       = false
+      [32m+[0m [0m[1m[0mmanifest[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mmax_history[0m[0m                = 0
+      [32m+[0m [0m[1m[0mmetadata[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "argocd"
+      [32m+[0m [0m[1m[0mnamespace[0m[0m                  = "argocd"
+      [32m+[0m [0m[1m[0mpass_credentials[0m[0m           = false
+      [32m+[0m [0m[1m[0mrecreate_pods[0m[0m              = false
+      [32m+[0m [0m[1m[0mrender_subchart_notes[0m[0m      = true
+      [32m+[0m [0m[1m[0mreplace[0m[0m                    = false
+      [32m+[0m [0m[1m[0mrepository[0m[0m                 = "https://argoproj.github.io/argo-helm"
+      [32m+[0m [0m[1m[0mreset_values[0m[0m               = false
+      [32m+[0m [0m[1m[0mreuse_values[0m[0m               = false
+      [32m+[0m [0m[1m[0mskip_crds[0m[0m                  = false
+      [32m+[0m [0m[1m[0mstatus[0m[0m                     = "deployed"
+      [32m+[0m [0m[1m[0mtimeout[0m[0m                    = 300
+      [32m+[0m [0m[1m[0mvalues[0m[0m                     = [
+          [32m+[0m [0m<<-EOT
+                crds:  
+                  keep: false    
+                   
+                controller:  
+                  name: application-controller  
+                  replicas: 2  
+                  pdb:   
+                    enabled: true    
+                    labels: {}   
+                    annotations: {}    
+                    minAvailable: "1"    
+                    maxUnavailable: ""    
+                  nodeSelector:
+                    argocd: prod  
+                  tolerations:
+                    - key: argocd
+                      value: prod
+                      effect: NoSchedule    
+                  resources:
+                    limits:
+                      cpu: 500m
+                      memory: 512Mi
+                    requests:
+                      cpu: 250m
+                      memory: 256Mi
+                dex: 
+                  enabled: true 
+                  name: dex-server 
+                  nodeSelector:
+                    argocd: prod  
+                  tolerations:
+                    - key: argocd
+                      value: prod
+                      effect: NoSchedule  
+                
+                redis-ha:  
+                  enabled: true  
+                  haproxy:   
+                    enabled: true    
+                  nodeSelector:
+                    argocd: prod  
+                  tolerations:
+                    - key: argocd
+                      value: prod
+                      effect: NoSchedule 
+                
+                server: 
+                  name: server  
+                  replicas: 2  
+                  autoscaling:   
+                    enabled: true     
+                    minReplicas: 2   
+                    maxReplicas: 5   
+                    targetCPUUtilizationPercentage: 50   
+                    targetMemoryUtilizationPercentage: 50     
+                  pdb:   
+                    enabled: true    
+                    labels: {}   
+                    annotations: {}    
+                    minAvailable: "1"   
+                    maxUnavailable: ""    
+                  nodeSelector:
+                    argocd: prod  
+                  tolerations:
+                    - key: argocd
+                      value: prod
+                      effect: NoSchedule   
+                  resources:
+                    limits:
+                      cpu: 300m
+                      memory: 1024Mi
+                    requests:
+                      cpu: 50m
+                      memory: 64Mi   
+                  service:   
+                    annotations: {}         
+                    labels: {}    
+                    type: ClusterIP   
+                    nodePortHttp: 30080    
+                    nodePortHttps: 30443   
+                    servicePortHttp: 80    
+                    servicePortHttps: 443    
+                    servicePortHttpName: http    
+                    servicePortHttpsName: https
+                  ingress:   
+                    enabled: true     
+                    annotations:
+                     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+                     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"   
+                    labels: {}    
+                    ingressClassName: "nginx"    
+                    hosts:
+                      []  
+                    paths:
+                      - /   
+                    pathType: Prefix 
+                    backend:
+                      service:
+                        name: argocd-server
+                        port:
+                        name: https  
+                    extraPaths:
+                      []      
+                    tls:
+                      []     
+                    https: true 
+                
+                repoServer: 
+                  name: repo-server 
+                  replicas: 2  
+                  autoscaling:   
+                    enabled: true    
+                    minReplicas: 2   
+                    maxReplicas: 5   
+                    targetCPUUtilizationPercentage: 50    
+                    targetMemoryUtilizationPercentage: 50   
+                  pdb:    
+                    enabled: true   
+                    labels: {}    
+                    annotations: {}    
+                    minAvailable: "1"    
+                    maxUnavailable: ""    
+                  nodeSelector:
+                    argocd: prod  
+                  tolerations:
+                    - key: argocd
+                      value: prod
+                      effect: NoSchedule   
+                  resources: 
+                    limits:
+                      cpu: 100m
+                      memory: 1024Mi
+                    requests:
+                      cpu: 10m
+                      memory: 64Mi
+                
+                applicationSet:  
+                  enabled: true  
+                  name: applicationset-controller  
+                  replicaCount: 2  
+                  pdb:   
+                    enabled: true   
+                    labels: {}  
+                    annotations: {}    
+                    minAvailable: "1"   
+                    maxUnavailable: ""   
+                  resources:   
+                     limits:
+                       cpu: 100m
+                       memory: 512Mi
+                     requests:
+                       cpu: 100m
+                       memory: 128Mi  
+                  nodeSelector:
+                    argocd: prod  
+                  tolerations:
+                    - key: argocd
+                      value: prod
+                      effect: NoSchedule
+                
+                notifications: 
+                  enabled: true 
+                  name: notifications-controller    
+                  resources:
+                     limits:
+                       cpu: 100m
+                       memory: 128Mi
+                     requests:
+                       cpu: 100m
+                       memory: 128Mi 
+                  nodeSelector:
+                    argocd: prod   
+                  tolerations:
+                    - key: argocd
+                      value: prod
+                      effect: NoSchedule
+            EOT,
+        ]
+      [32m+[0m [0m[1m[0mverify[0m[0m                     = false
+      [32m+[0m [0m[1m[0mversion[0m[0m                    = "5.16.7"
+      [32m+[0m [0m[1m[0mwait[0m[0m                       = true
+      [32m+[0m [0m[1m[0mwait_for_jobs[0m[0m              = false
+    }
+
+[1m  # module.aks_ingress_controller.helm_release.ingress_controller[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "helm_release" "ingress_controller" {
+      [32m+[0m [0m[1m[0matomic[0m[0m                     = false
+      [32m+[0m [0m[1m[0mchart[0m[0m                      = "ingress-nginx"
+      [32m+[0m [0m[1m[0mcleanup_on_fail[0m[0m            = false
+      [32m+[0m [0m[1m[0mcreate_namespace[0m[0m           = true
+      [32m+[0m [0m[1m[0mdependency_update[0m[0m          = false
+      [32m+[0m [0m[1m[0mdisable_crd_hooks[0m[0m          = false
+      [32m+[0m [0m[1m[0mdisable_openapi_validation[0m[0m = false
+      [32m+[0m [0m[1m[0mdisable_webhooks[0m[0m           = false
+      [32m+[0m [0m[1m[0mforce_update[0m[0m               = false
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mlint[0m[0m                       = false
+      [32m+[0m [0m[1m[0mmanifest[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mmax_history[0m[0m                = 0
+      [32m+[0m [0m[1m[0mmetadata[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "ingress-nginx"
+      [32m+[0m [0m[1m[0mnamespace[0m[0m                  = "ingress-nginx"
+      [32m+[0m [0m[1m[0mpass_credentials[0m[0m           = false
+      [32m+[0m [0m[1m[0mrecreate_pods[0m[0m              = false
+      [32m+[0m [0m[1m[0mrender_subchart_notes[0m[0m      = true
+      [32m+[0m [0m[1m[0mreplace[0m[0m                    = false
+      [32m+[0m [0m[1m[0mrepository[0m[0m                 = "https://kubernetes.github.io/ingress-nginx"
+      [32m+[0m [0m[1m[0mreset_values[0m[0m               = false
+      [32m+[0m [0m[1m[0mreuse_values[0m[0m               = false
+      [32m+[0m [0m[1m[0mskip_crds[0m[0m                  = false
+      [32m+[0m [0m[1m[0mstatus[0m[0m                     = "deployed"
+      [32m+[0m [0m[1m[0mtimeout[0m[0m                    = 300
+      [32m+[0m [0m[1m[0mvalues[0m[0m                     = [
+          [32m+[0m [0m<<-EOT
+                controller:
+                  config:
+                    large-client-header-buffers: 4 128k
+                    proxy-buffer-size: 128k    
+                  service:
+                    annotations:     
+                      service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
+                  type: LoadBalancer  
+                  resources:
+                    limits:
+                      cpu: 500m
+                      memory: 1024Mi
+                    requests:
+                      cpu: 100m
+                      memory: 512Mi
+                  nodeSelector:
+                    agentpool: system
+                  replicaCount: 2  
+                rbac:
+                  create: true
+                prometheus:
+                  create: true
+                  port: 9113
+            EOT,
+        ]
+      [32m+[0m [0m[1m[0mverify[0m[0m                     = false
+      [32m+[0m [0m[1m[0mversion[0m[0m                    = "4.4.0"
+      [32m+[0m [0m[1m[0mwait[0m[0m                       = true
+      [32m+[0m [0m[1m[0mwait_for_jobs[0m[0m              = false
+    }
+
+[1m  # module.aks_key_vault.data.azurerm_client_config.current[0m will be read during apply[0m
+  # (depends on a resource or a module with changes pending)[0m
+[0m [36m<=[0m[0m data "azurerm_client_config" "current" {
+      [32m+[0m [0m[1m[0mclient_id[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mobject_id[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0msubscription_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mtenant_id[0m[0m       = (known after apply)
+
+      [32m+[0m [0mtimeouts {
+          [32m+[0m [0m[1m[0mread[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.aks_key_vault.azurerm_key_vault.aks_key_vault[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "azurerm_key_vault" "aks_key_vault" {
+      [32m+[0m [0m[1m[0maccess_policy[0m[0m                 = [
+          [32m+[0m [0m{
+              [32m+[0m [0mapplication_id          = [90mnull[0m[0m
+              [32m+[0m [0mcertificate_permissions = [
+                  [32m+[0m [0m"Get",
+                  [32m+[0m [0m"Create",
+                  [32m+[0m [0m"Delete",
+                  [32m+[0m [0m"Update",
+                  [32m+[0m [0m"List",
+                  [32m+[0m [0m"Import",
+                ]
+              [32m+[0m [0mkey_permissions         = [
+                  [32m+[0m [0m"Get",
+                  [32m+[0m [0m"Create",
+                  [32m+[0m [0m"Delete",
+                  [32m+[0m [0m"Encrypt",
+                  [32m+[0m [0m"List",
+                  [32m+[0m [0m"Import",
+                ]
+              [32m+[0m [0mobject_id               = (known after apply)
+              [32m+[0m [0msecret_permissions      = [
+                  [32m+[0m [0m"Get",
+                  [32m+[0m [0m"Set",
+                  [32m+[0m [0m"List",
+                  [32m+[0m [0m"Delete",
+                ]
+              [32m+[0m [0mstorage_permissions     = [90mnull[0m[0m
+              [32m+[0m [0mtenant_id               = (known after apply)
+            },
+        ]
+      [32m+[0m [0m[1m[0menabled_for_disk_encryption[0m[0m   = true
+      [32m+[0m [0m[1m[0mid[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mlocation[0m[0m                      = "eastus2"
+      [32m+[0m [0m[1m[0mname[0m[0m                          = "kv-eastus2-prod-kvaks-01"
+      [32m+[0m [0m[1m[0mpublic_network_access_enabled[0m[0m = true
+      [32m+[0m [0m[1m[0mpurge_protection_enabled[0m[0m      = false
+      [32m+[0m [0m[1m[0mresource_group_name[0m[0m           = "rg-eastus2-prod-kvaks-01"
+      [32m+[0m [0m[1m[0msku_name[0m[0m                      = "standard"
+      [32m+[0m [0m[1m[0msoft_delete_retention_days[0m[0m    = 7
+      [32m+[0m [0m[1m[0mtags[0m[0m                          = {
+          [32m+[0m [0m"Application" = "AKS-GitOps"
+          [32m+[0m [0m"Environment" = "PROD"
+          [32m+[0m [0m"Managed"     = "Terraform"
+          [32m+[0m [0m"Owner"       = "Snittech"
+          [32m+[0m [0m"Responsable" = "Devops Team"
+        }
+      [32m+[0m [0m[1m[0mtenant_id[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mvault_uri[0m[0m                     = (known after apply)
+
+      [32m+[0m [0mnetwork_acls {
+          [32m+[0m [0m[1m[0mbypass[0m[0m                     = (known after apply)
+          [32m+[0m [0m[1m[0mdefault_action[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mip_rules[0m[0m                   = (known after apply)
+          [32m+[0m [0m[1m[0mvirtual_network_subnet_ids[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.aks_key_vault.azurerm_resource_group.rg_key_vault[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "azurerm_resource_group" "rg_key_vault" {
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mlocation[0m[0m = "eastus2"
+      [32m+[0m [0m[1m[0mname[0m[0m     = "rg-eastus2-prod-kvaks-01"
+    }
+
+[1m  # module.aks_network.azurerm_resource_group.rg_vnet[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "azurerm_resource_group" "rg_vnet" {
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mlocation[0m[0m = "eastus2"
+      [32m+[0m [0m[1m[0mname[0m[0m     = "rg-eastus2-prod-aksvnetgitops-01"
+    }
+
+[1m  # module.aks_network.azurerm_subnet.akssubnetgitops[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "azurerm_subnet" "akssubnetgitops" {
+      [32m+[0m [0m[1m[0maddress_prefixes[0m[0m                               = [
+          [32m+[0m [0m"10.26.0.0/19",
+        ]
+      [32m+[0m [0m[1m[0menforce_private_link_endpoint_network_policies[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0menforce_private_link_service_network_policies[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                                           = "snet-eastus2-prod-akssnetgitops-01"
+      [32m+[0m [0m[1m[0mprivate_endpoint_network_policies_enabled[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_link_service_network_policies_enabled[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mresource_group_name[0m[0m                            = "rg-eastus2-prod-aksvnetgitops-01"
+      [32m+[0m [0m[1m[0mvirtual_network_name[0m[0m                           = "vnet-eastus2-prod-aksvnetgitops-01"
+    }
+
+[1m  # module.aks_network.azurerm_virtual_network.aksvnetgitops[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "azurerm_virtual_network" "aksvnetgitops" {
+      [32m+[0m [0m[1m[0maddress_space[0m[0m       = [
+          [32m+[0m [0m"10.26.0.0/16",
+        ]
+      [32m+[0m [0m[1m[0mdns_servers[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mguid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mlocation[0m[0m            = "eastus2"
+      [32m+[0m [0m[1m[0mname[0m[0m                = "vnet-eastus2-prod-aksvnetgitops-01"
+      [32m+[0m [0m[1m[0mresource_group_name[0m[0m = "rg-eastus2-prod-aksvnetgitops-01"
+      [32m+[0m [0m[1m[0msubnet[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                = {
+          [32m+[0m [0m"Application" = "AKS-GitOps"
+          [32m+[0m [0m"Environment" = "PROD"
+          [32m+[0m [0m"Managed"     = "Terraform"
+          [32m+[0m [0m"Owner"       = "Snittech"
+          [32m+[0m [0m"Responsable" = "Devops Team"
+        }
+    }
+
+[0m[1mPlan:[0m 11 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0maddress_space_subnet[0m[0m   = [
+      [32m+[0m [0m"10.26.0.0/19",
+    ]
+  [32m+[0m [0m[1m[0maddress_space_vnet[0m[0m     = [
+      [32m+[0m [0m"10.26.0.0/16",
+    ]
+  [32m+[0m [0m[1m[0mclient_certificate[0m[0m     = (sensitive value)
+  [32m+[0m [0m[1m[0mclient_key[0m[0m             = (sensitive value)
+  [32m+[0m [0m[1m[0mcluster_ca_certificate[0m[0m = (sensitive value)
+  [32m+[0m [0m[1m[0mhost[0m[0m                   = (sensitive value)
+  [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+  [32m+[0m [0m[1m[0mkey_vault_id[0m[0m           = (known after apply)
+  [32m+[0m [0m[1m[0mkey_vault_name[0m[0m         = "kv-eastus2-prod-kvaks-01"
+  [32m+[0m [0m[1m[0mkey_vault_uri[0m[0m          = (known after apply)
+  [32m+[0m [0m[1m[0mkube_config[0m[0m            = (sensitive value)
+  [32m+[0m [0m[1m[0msubnet[0m[0m                 = "snet-eastus2-prod-akssnetgitops-01"
+  [32m+[0m [0m[1m[0msubnet_id[0m[0m              = (known after apply)
+  [32m+[0m [0m[1m[0mvirtual_network_name[0m[0m   = "vnet-eastus2-prod-aksvnetgitops-01"
+  [32m+[0m [0m[1m[0mvnet_id[0m[0m                = (known after apply)
+[0m[1mmodule.aks_network.azurerm_resource_group.rg_vnet: Creating...[0m[0m
+[0m[1mmodule.aks_network.azurerm_resource_group.rg_vnet: Creation complete after 1s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-prod-aksvnetgitops-01][0m
+[0m[1mmodule.aks_network.azurerm_virtual_network.aksvnetgitops: Creating...[0m[0m
+[0m[1mmodule.aks_network.azurerm_virtual_network.aksvnetgitops: Creation complete after 6s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-prod-aksvnetgitops-01/providers/Microsoft.Network/virtualNetworks/vnet-eastus2-prod-aksvnetgitops-01][0m
+[0m[1mmodule.aks_network.azurerm_subnet.akssubnetgitops: Creating...[0m[0m
+[0m[1mmodule.aks_network.azurerm_subnet.akssubnetgitops: Creation complete after 5s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-prod-aksvnetgitops-01/providers/Microsoft.Network/virtualNetworks/vnet-eastus2-prod-aksvnetgitops-01/subnets/snet-eastus2-prod-akssnetgitops-01][0m
+[0m[1mmodule.aks_cluster.azurerm_resource_group.rgaksgitops: Creating...[0m[0m
+[0m[1mmodule.aks_cluster.azurerm_resource_group.rgaksgitops: Creation complete after 1s [id=/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-prod-aksgitops-01][0m
+[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Creating...[0m[0m
+[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [40s elapsed][0m[0m
+[0m[1mmodule.aks_cluster.azurerm_kubernetes_cluster.aksgitops: Still creating... [50s elapsed][0m[0m

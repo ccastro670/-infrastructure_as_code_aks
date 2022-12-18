@@ -6,7 +6,33 @@ This module has integration with Azure Key Vault enabled.
 
 # Usage
 
-# Configurations
+# Configurations Prerequisites
+
+* `Azure subscription`
+* `Terraform`
+* `Terraform-docs`
+* `Azure Storage Account`
+* `Azure Container storage for the Terraform State file`
+
+# Terraform State
+Terraform stores state about your managed infrastructure and configuration in a special file called state file. This state is used by Terraform to map real-world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures. Terraform state is used to reconcile deployed resources with Terraform configurations. When using Terraform to deploy Azure resources, the state allows Terraform to know what Azure resources to add, update, or delete. By default, Terraform state is stored in a local file named "terraform.tfstate", but it can also be stored remotely, which works better in a team environment. Storing the state in a local file isn't ideal for the following reasons:
+
+* `Storing the Terraform state in a local file doesn't work well in a team or collaborative environment.`
+* `Terraform state can include sensitive information.`
+* `Storing state locally increases the chance of inadvertent deletion.`
+
+We have configured in our provider the azure storage backend to store our terraform state file based on best practices.
+
+```hcl
+ backend "azurerm" {
+    resource_group_name  = "RG-AZ-STORAGE_ACC"
+    storage_account_name = "terraform0003"
+    container_name       = "tfstateaksmodule"
+    key                  = "aksmodule.terraform.tfstate"
+  }
+}
+```
+
 
 We assumed that you have setup service principal's credentials in your environment variables like below:
 ```shell
