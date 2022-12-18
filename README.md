@@ -1,6 +1,9 @@
 # Terraform Deployment AKS Cluster & ArgoCD
 Deployment AKS Cluster
 
+This module creates an Azure Kubernetes Service cluster and installs an nginx ingress controller and deploys the GitOps ArgoCD application.
+This module has integration with Azure Key Vault enabled.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -11,7 +14,13 @@ Deployment AKS Cluster
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_helm"></a> [helm](#provider\_helm) | ~> 2.8.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.36.0 |
+| <a name="provider_local"></a> [local](#provider\_local) | n/a |
+
+
 
 ## Modules
 
