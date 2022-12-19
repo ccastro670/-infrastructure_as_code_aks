@@ -1,0 +1,176 @@
+crds:  
+  keep: false    
+   
+controller:  
+  name: application-controller  
+  replicas: 2  
+  pdb:   
+    enabled: true    
+    labels: {}   
+    annotations: {}    
+    minAvailable: "1"    
+    maxUnavailable: ""    
+  nodeSelector:
+    argocd: prod  
+  tolerations:
+    - key: argocd
+      value: prod
+      effect: NoSchedule    
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+dex: 
+  enabled: true 
+  name: dex-server 
+  nodeSelector:
+    argocd: prod  
+  tolerations:
+    - key: argocd
+      value: prod
+      effect: NoSchedule  
+
+redis-ha:  
+  enabled: true  
+  haproxy:   
+    enabled: true    
+  nodeSelector:
+    argocd: prod  
+  tolerations:
+    - key: argocd
+      value: prod
+      effect: NoSchedule 
+
+server: 
+  name: server  
+  replicas: 2  
+  autoscaling:   
+    enabled: true     
+    minReplicas: 2   
+    maxReplicas: 5   
+    targetCPUUtilizationPercentage: 50   
+    targetMemoryUtilizationPercentage: 50     
+  pdb:   
+    enabled: true    
+    labels: {}   
+    annotations: {}    
+    minAvailable: "1"   
+    maxUnavailable: ""    
+  nodeSelector:
+    argocd: prod  
+  tolerations:
+    - key: argocd
+      value: prod
+      effect: NoSchedule   
+  resources:
+    limits:
+      cpu: 300m
+      memory: 1024Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi   
+  service:   
+    annotations: {}         
+    labels: {}    
+    type: ClusterIP   
+    nodePortHttp: 30080    
+    nodePortHttps: 30443   
+    servicePortHttp: 80    
+    servicePortHttps: 443    
+    servicePortHttpName: http    
+    servicePortHttpsName: https
+  ingress:   
+    enabled: true     
+    annotations:
+     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"   
+    labels: {}    
+    ingressClassName: "nginx"    
+    hosts:
+      []  
+    paths:
+      - /   
+    pathType: Prefix 
+    backend:
+      service:
+        name: argocd-server
+        port:
+        name: https  
+    extraPaths:
+      []      
+    tls:
+      []     
+    https: true 
+
+repoServer: 
+  name: repo-server 
+  replicas: 2  
+  autoscaling:   
+    enabled: true    
+    minReplicas: 2   
+    maxReplicas: 5   
+    targetCPUUtilizationPercentage: 50    
+    targetMemoryUtilizationPercentage: 50   
+  pdb:    
+    enabled: true   
+    labels: {}    
+    annotations: {}    
+    minAvailable: "1"    
+    maxUnavailable: ""    
+  nodeSelector:
+    argocd: prod  
+  tolerations:
+    - key: argocd
+      value: prod
+      effect: NoSchedule   
+  resources: 
+    limits:
+      cpu: 100m
+      memory: 1024Mi
+    requests:
+      cpu: 10m
+      memory: 64Mi
+
+applicationSet:  
+  enabled: true  
+  name: applicationset-controller  
+  replicaCount: 2  
+  pdb:   
+    enabled: true   
+    labels: {}  
+    annotations: {}    
+    minAvailable: "1"   
+    maxUnavailable: ""   
+  resources:   
+     limits:
+       cpu: 100m
+       memory: 512Mi
+     requests:
+       cpu: 100m
+       memory: 128Mi  
+  nodeSelector:
+    argocd: prod  
+  tolerations:
+    - key: argocd
+      value: prod
+      effect: NoSchedule
+
+notifications: 
+  enabled: true 
+  name: notifications-controller    
+  resources:
+     limits:
+       cpu: 100m
+       memory: 128Mi
+     requests:
+       cpu: 100m
+       memory: 128Mi 
+  nodeSelector:
+    argocd: prod   
+  tolerations:
+    - key: argocd
+      value: prod
+      effect: NoSchedule

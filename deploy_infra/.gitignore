@@ -1,0 +1,8 @@
+# Ignore .terraform local directory
+**/.terraform/*
+
+# Ignore Terrafom lock file.
+.terraform.lock.hcl
+
+# Mac folder attribute file
+.DS_Store
