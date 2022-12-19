@@ -99,6 +99,6 @@ lifecycle {
 
 resource "local_file" "kube_config_raw_aks" {
     content  = azurerm_kubernetes_cluster.aksgitops.kube_config_raw
-    filename = "${path.module}/config_aksgitops"
+    filename = var.kube_config_path
     depends_on = [azurerm_kubernetes_cluster.aksgitops]
 }

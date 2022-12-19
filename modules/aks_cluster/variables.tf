@@ -238,3 +238,8 @@ variable "secret_rotation_interval" {
   default     = "2m"
   nullable    = false
 }
+
+variable "kube_config_path" {
+  type    = string
+  description = "kubeconfig path helm authentication"  
+}
