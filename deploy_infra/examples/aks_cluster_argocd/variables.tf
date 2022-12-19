@@ -324,3 +324,8 @@ variable "purge_protection_enabled" {
   description = "Purge protection enabled key vault."   
 }
 
+variable "kube_config_path" {
+  type    = string
+  description = "kubeconfig path helm authentication"  
+}
+

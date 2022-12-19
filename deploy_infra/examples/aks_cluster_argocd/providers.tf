@@ -23,6 +23,7 @@ provider "azurerm" {
 
 provider "helm" {  
   kubernetes {  
-    config_path = "../../modules/aks_cluster/config_aksgitops"     
+  #  config_path = "../../modules/aks_cluster/config_aksgitops" 
+    config_path = var.kube_config_path   
   }
 }
