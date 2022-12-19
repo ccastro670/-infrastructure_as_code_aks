@@ -51,7 +51,8 @@ module "aks_cluster" {
   agents_max_pods            = var.agents_max_pods
   http_application_routing_enabled = var.http_application_routing_enabled
   aks_mode_nodepool_user     = var.aks_mode_nodepool_user
-  aks_agent_os_disk_size     = var.aks_agent_os_disk_size  
+  aks_agent_os_disk_size     = var.aks_agent_os_disk_size 
+  kube_config_path           = var.kube_config_path 
   tags                       = var.tags
 }
 
