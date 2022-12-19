@@ -11,10 +11,10 @@ controller:
     minAvailable: "1"    
     maxUnavailable: ""    
   nodeSelector:
-    argocd: prod  
+    argocd: gitops  
   tolerations:
     - key: argocd
-      value: prod
+      value: gitops
       effect: NoSchedule    
   resources:
     limits:
@@ -27,10 +27,10 @@ dex:
   enabled: true 
   name: dex-server 
   nodeSelector:
-    argocd: prod  
+    argocd: gitops  
   tolerations:
     - key: argocd
-      value: prod
+      value: gitops
       effect: NoSchedule  
 
 redis-ha:  
@@ -38,10 +38,10 @@ redis-ha:
   haproxy:   
     enabled: true    
   nodeSelector:
-    argocd: prod  
+    argocd: gitops  
   tolerations:
     - key: argocd
-      value: prod
+      value: gitops
       effect: NoSchedule 
 
 server: 
@@ -60,10 +60,10 @@ server:
     minAvailable: "1"   
     maxUnavailable: ""    
   nodeSelector:
-    argocd: prod  
+    argocd: gitops  
   tolerations:
     - key: argocd
-      value: prod
+      value: gitops
       effect: NoSchedule   
   resources:
     limits:
@@ -121,10 +121,10 @@ repoServer:
     minAvailable: "1"    
     maxUnavailable: ""    
   nodeSelector:
-    argocd: prod  
+    argocd: gitops  
   tolerations:
     - key: argocd
-      value: prod
+      value: gitops
       effect: NoSchedule   
   resources: 
     limits:
@@ -152,10 +152,10 @@ applicationSet:
        cpu: 100m
        memory: 128Mi  
   nodeSelector:
-    argocd: prod  
+    argocd: gitops  
   tolerations:
     - key: argocd
-      value: prod
+      value: gitops
       effect: NoSchedule
 
 notifications: 
@@ -169,8 +169,8 @@ notifications:
        cpu: 100m
        memory: 128Mi 
   nodeSelector:
-    argocd: prod   
+    argocd: gitops   
   tolerations:
     - key: argocd
-      value: prod
+      value: gitops
       effect: NoSchedule
