@@ -4,8 +4,11 @@ crds:
 controller:  
   name: application-controller  
   replicas: 2  
-  args:
-    selfHealTimeout: "10"
+  extraArgs:
+    - --self-heal-timeout-seconds
+    - "10"
+    - --app-resync
+    - "180"
     appResyncPeriod: "180"
   pdb:   
     enabled: true    
