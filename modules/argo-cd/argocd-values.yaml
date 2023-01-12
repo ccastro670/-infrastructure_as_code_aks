@@ -6,11 +6,7 @@ controller:
   replicas: 2  
   extraArgs:
     - --self-heal-timeout-seconds
-    - "10"
-    - --app-resync
-    - "180"
-    - --app-hard-resync
-    - "300"
+    - "2"    
   pdb:   
     enabled: true    
     labels: {}   
