@@ -4,14 +4,16 @@ crds:
 controller:  
   name: application-controller  
   replicas: 2  
+  args:
+    selfHealTimeout: "10"
+    appResyncPeriod: "180"
   pdb:   
     enabled: true    
     labels: {}   
     annotations: {}    
     minAvailable: "1"    
     maxUnavailable: ""  
-  args:
-    selfHealTimeout: "10"
+  
   nodeSelector:
     argocd: gitops  
   tolerations:
