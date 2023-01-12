@@ -8,8 +8,7 @@ controller:
     - --self-heal-timeout-seconds
     - "10"
     - --app-resync
-    - "180"
-    appResyncPeriod: "180"
+    - "180"    
   pdb:   
     enabled: true    
     labels: {}   
