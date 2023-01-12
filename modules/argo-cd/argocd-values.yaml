@@ -9,7 +9,9 @@ controller:
     labels: {}   
     annotations: {}    
     minAvailable: "1"    
-    maxUnavailable: ""    
+    maxUnavailable: ""  
+  args:
+    selfHealTimeout: "10"
   nodeSelector:
     argocd: gitops  
   tolerations:
