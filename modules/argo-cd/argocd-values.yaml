@@ -1,14 +1,21 @@
 crds:  
-  keep: false    
+  keep: false
+  
+configs:
+  cm:
+    create: true
+    timeout.reconciliation: 30s
+    timeout.hard.reconciliation: 0s
+    admin.enabled: true
+
+params:
+  controller.self.heal.timeout.seconds: 3
+  controller.repo.server.timeout.seconds: 60
    
 controller:  
   name: application-controller  
-  replicas: 2  
-  extraArgs:
-    - --self-heal-timeout-seconds
-    - "2" 
-    - --app-resync
-    - "60"
+  replicas: 2
+  
   pdb:   
     enabled: true    
     labels: {}   
