@@ -75,7 +75,9 @@ module "aks_gitops_argocd" {
   chart_name_argocd        = var.chart_name_argocd
   namespace_name_argocd    = var.namespace_name_argocd
   create_namespace_argocd  = var.create_namespace_argocd
-  repository_argocd        = var.repository_argocd  
+  repository_argocd        = var.repository_argocd
+  github.client.id         = var.github_oauth_client_id
+  github.client.secret     = var.github_oauth_client_secret
 }
 
 module "aks_key_vault" {
