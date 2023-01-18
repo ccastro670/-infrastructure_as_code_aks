@@ -42,5 +42,5 @@ variable "github_oauth_client_id" {
 variable "github_oauth_client_secret" {
   type = string
   sensitive = true
-  default = "0497ecb33a570e3e2a71daa12bb1742be71bfb5a"
+  default = "6afe87efd68b8f79ca84b6371f26505bb8f1821c"
 }
