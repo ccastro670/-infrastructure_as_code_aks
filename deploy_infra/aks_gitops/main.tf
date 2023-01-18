@@ -69,15 +69,15 @@ module "aks_ingress_controller" {
 
 module "aks_gitops_argocd" {
   source = "../../modules/argo-cd"
-  depends_on               = [module.aks_ingress_controller]
-  version_release_argocd   = var.version_release_argocd
-  application_name_argocd  = var.application_name_argocd
-  chart_name_argocd        = var.chart_name_argocd
-  namespace_name_argocd    = var.namespace_name_argocd
-  create_namespace_argocd  = var.create_namespace_argocd
-  repository_argocd        = var.repository_argocd
-  github_client_id         = var.github_oauth_client_id
-  github_client_secret     = var.github_oauth_client_secret
+  depends_on                  = [module.aks_ingress_controller]
+  version_release_argocd      = var.version_release_argocd
+  application_name_argocd     = var.application_name_argocd
+  chart_name_argocd           = var.chart_name_argocd
+  namespace_name_argocd       = var.namespace_name_argocd
+  create_namespace_argocd     = var.create_namespace_argocd
+  repository_argocd           = var.repository_argocd
+  github_oauth_client_id      = var.github_oauth_client_id
+  github_oauth_client_secret  = var.github_oauth_client_secret
 }
 
 module "aks_key_vault" {
