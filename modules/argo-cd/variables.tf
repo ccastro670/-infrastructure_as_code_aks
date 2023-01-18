@@ -23,3 +23,24 @@ variable "repository_argocd" {
   type        = string
 }
 
+variable "github_secret_name" {
+  type        = string
+  default = "github-entp"
+}
+
+variable "argocd_namespace" {
+  type        = string
+  default = "argocd"
+}
+
+variable "github_oauth_client_id" {
+  type = string
+  sensitive = true
+  default = "bf1fc8b395531c0fbb5c"
+}
+
+variable "github_oauth_client_secret" {
+  type = string
+  sensitive = true
+  default = "0497ecb33a570e3e2a71daa12bb1742be71bfb5a"
+}
