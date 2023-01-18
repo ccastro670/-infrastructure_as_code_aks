@@ -329,3 +329,24 @@ variable "kube_config_path" {
   description = "kubeconfig path helm authentication"  
 }
 
+variable "github_secret_name" {
+  type        = string
+  default = "github-entp"
+}
+
+variable "argocd_namespace" {
+  type        = string
+  default = "argocd"
+}
+
+variable "github_oauth_client_id" {
+  type = string
+  sensitive = true
+  default = "bf1fc8b395531c0fbb5c"
+}
+
+variable "github_oauth_client_secret" {
+  type = string
+  sensitive = true
+  default = "6afe87efd68b8f79ca84b6371f26505bb8f1821c"
+}
