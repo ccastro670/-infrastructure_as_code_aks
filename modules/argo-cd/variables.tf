@@ -35,12 +35,10 @@ variable "argocd_namespace" {
 
 variable "github_oauth_client_id" {
   type = string
-  sensitive = true
-  default = "bf1fc8b395531c0fbb5c"
+  sensitive = true  
 }
 
 variable "github_oauth_client_secret" {
   type = string
-  sensitive = true
-  default = "6afe87efd68b8f79ca84b6371f26505bb8f1821c"
+  sensitive = true  
 }
