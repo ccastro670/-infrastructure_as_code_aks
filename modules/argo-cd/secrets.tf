@@ -8,8 +8,8 @@ resource "kubernetes_secret" "github_oauth" {
   }
 
   data = {
-    github.client.id = var.github_oauth_client_id
-    github.client.secret = var.github_oauth_client_secret
+    "github.client.id" = var.github_oauth_client_id
+    "github.client.secret" = var.github_oauth_client_secret
   }
 
   type = "Opaque"
