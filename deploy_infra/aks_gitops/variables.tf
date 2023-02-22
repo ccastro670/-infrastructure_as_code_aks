@@ -339,7 +339,7 @@ variable "argocd_namespace" {
   default = "argocd"
 }
 
-variable "gateway_id" {
-  type    = string
-  description = "Appgw id" 
-}
+#variable "gateway_id" {
+#  type    = string
+#  description = "Appgw id" 
+#}
