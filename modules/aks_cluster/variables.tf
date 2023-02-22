@@ -244,8 +244,8 @@ variable "kube_config_path" {
   description = "kubeconfig path helm authentication"  
 }
 
-#variable "gateway_id" {
-#  type    = string
-#  description = "Appgw id" 
-#}
+variable "gateway_id" {
+  type    = string
+  description = "Appgw id" 
+}
 
