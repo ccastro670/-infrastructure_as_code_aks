@@ -65,10 +65,10 @@ dynamic "identity" {
     network_policy     = var.aks_network_policy
   } 
   
- #ingress_application_gateway {      
- #     gateway_id = var.gateway_id      
-#
- #   }
+ ingress_application_gateway {      
+      gateway_id = var.gateway_id      
+
+    }
 
 }
 
