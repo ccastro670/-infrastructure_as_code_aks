@@ -244,12 +244,12 @@ variable "kube_config_path" {
   description = "kubeconfig path helm authentication"  
 }
 
-variable "appgw_subnet_id" {
-  type    = string
-  description = "Subnet id appgw"  
-}
-
 variable "gateway_id" {
   type    = string
   description = "Appgw id" 
+}
+
+variable "appgw_subnet_id" {
+  type    = string
+  description = "Subnet id appgw"  
 }
