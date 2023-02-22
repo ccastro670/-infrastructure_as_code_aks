@@ -66,8 +66,7 @@ dynamic "identity" {
   } 
   
  ingress_application_gateway {      
-      gateway_id = var.gateway_id
-      subnet_id = var.appgw_subnet_id
+      gateway_id = var.gateway_id      
 
     }
 
