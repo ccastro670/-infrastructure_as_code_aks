@@ -66,8 +66,8 @@ dynamic "identity" {
   } 
   
  ingress_application_gateway {      
-      gateway_id = "/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-apgw-01/providers/Microsoft.Network/applicationGateways/appgw-eastus2-dev-aks-01"
-      subnet_id = "/subscriptions/ea136e94-f6d7-4573-b6e7-d352514bc6a6/resourceGroups/rg-eastus2-dev-aksvnetgitops-01/providers/Microsoft.Network/virtualNetworks/vnet-eastus2-dev-aksvnetgitops-01/subnets/snet-eastus2-dev-apgwsubnet-01"
+      gateway_id = var.gateway_id
+      subnet_id = var.appgw_subnet_id
 
     }
 
