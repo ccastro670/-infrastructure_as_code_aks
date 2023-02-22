@@ -339,3 +339,12 @@ variable "argocd_namespace" {
   default = "argocd"
 }
 
+variable "appgw_subnet_id" {
+  type    = string
+  description = "Subnet id appgw"  
+}
+
+variable "gateway_id" {
+  type    = string
+  description = "Appgw id  
+}
