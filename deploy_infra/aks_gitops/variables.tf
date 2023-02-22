@@ -346,5 +346,5 @@ variable "appgw_subnet_id" {
 
 variable "gateway_id" {
   type    = string
-  description = "Appgw id  
+  description = "Appgw id" 
 }
