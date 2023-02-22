@@ -53,8 +53,7 @@ module "aks_cluster" {
   aks_mode_nodepool_user     = var.aks_mode_nodepool_user
   aks_agent_os_disk_size     = var.aks_agent_os_disk_size 
   kube_config_path           = var.kube_config_path 
-  gateway_id                 = var.gateway_id
-  appgw_subnet_id            = var.appgw_subnet_id
+  gateway_id                 = var.gateway_id  
   tags                       = var.tags
 }
 
